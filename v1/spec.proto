@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "google/protobuf/timestamp.proto";
 
+//kafka event
 message Event {
   string Hash = 1;
   google.protobuf.Timestamp EventTime = 2;
