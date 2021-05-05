@@ -76,6 +76,61 @@ func (x *Event) GetEventTime() *timestamppb.Timestamp {
 	return nil
 }
 
+type Event1 struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Hash1      string                 `protobuf:"bytes,1,opt,name=Hash1,proto3" json:"Hash1,omitempty"`
+	EventTime1 *timestamppb.Timestamp `protobuf:"bytes,2,opt,name=EventTime1,proto3" json:"EventTime1,omitempty"`
+}
+
+func (x *Event1) Reset() {
+	*x = Event1{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_v1_types_event_proto_msgTypes[1]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Event1) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Event1) ProtoMessage() {}
+
+func (x *Event1) ProtoReflect() protoreflect.Message {
+	mi := &file_v1_types_event_proto_msgTypes[1]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Event1.ProtoReflect.Descriptor instead.
+func (*Event1) Descriptor() ([]byte, []int) {
+	return file_v1_types_event_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *Event1) GetHash1() string {
+	if x != nil {
+		return x.Hash1
+	}
+	return ""
+}
+
+func (x *Event1) GetEventTime1() *timestamppb.Timestamp {
+	if x != nil {
+		return x.EventTime1
+	}
+	return nil
+}
+
 var File_v1_types_event_proto protoreflect.FileDescriptor
 
 var file_v1_types_event_proto_rawDesc = []byte{
@@ -87,8 +142,14 @@ var file_v1_types_event_proto_rawDesc = []byte{
 	0x48, 0x61, 0x73, 0x68, 0x12, 0x38, 0x0a, 0x09, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x54, 0x69, 0x6d,
 	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x54, 0x69, 0x6d, 0x65, 0x73, 0x74,
-	0x61, 0x6d, 0x70, 0x52, 0x09, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x54, 0x69, 0x6d, 0x65, 0x62, 0x06,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x61, 0x6d, 0x70, 0x52, 0x09, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x54, 0x69, 0x6d, 0x65, 0x22, 0x5a,
+	0x0a, 0x06, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x31, 0x12, 0x14, 0x0a, 0x05, 0x48, 0x61, 0x73, 0x68,
+	0x31, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x48, 0x61, 0x73, 0x68, 0x31, 0x12, 0x3a,
+	0x0a, 0x0a, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x54, 0x69, 0x6d, 0x65, 0x31, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x62, 0x75, 0x66, 0x2e, 0x54, 0x69, 0x6d, 0x65, 0x73, 0x74, 0x61, 0x6d, 0x70, 0x52, 0x0a,
+	0x45, 0x76, 0x65, 0x6e, 0x74, 0x54, 0x69, 0x6d, 0x65, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (
@@ -103,18 +164,20 @@ func file_v1_types_event_proto_rawDescGZIP() []byte {
 	return file_v1_types_event_proto_rawDescData
 }
 
-var file_v1_types_event_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_v1_types_event_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_v1_types_event_proto_goTypes = []interface{}{
 	(*Event)(nil),                 // 0: Event
-	(*timestamppb.Timestamp)(nil), // 1: google.protobuf.Timestamp
+	(*Event1)(nil),                // 1: Event1
+	(*timestamppb.Timestamp)(nil), // 2: google.protobuf.Timestamp
 }
 var file_v1_types_event_proto_depIdxs = []int32{
-	1, // 0: Event.EventTime:type_name -> google.protobuf.Timestamp
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	2, // 0: Event.EventTime:type_name -> google.protobuf.Timestamp
+	2, // 1: Event1.EventTime1:type_name -> google.protobuf.Timestamp
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_v1_types_event_proto_init() }
@@ -135,6 +198,18 @@ func file_v1_types_event_proto_init() {
 				return nil
 			}
 		}
+		file_v1_types_event_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Event1); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -142,7 +217,7 @@ func file_v1_types_event_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_v1_types_event_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

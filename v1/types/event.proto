@@ -6,3 +6,8 @@ message Event {
   string Hash = 1;
   google.protobuf.Timestamp EventTime = 2;
 }
+
+message Event1 {
+  string Hash1 = 1;
+  google.protobuf.Timestamp EventTime1 = 2;
+}
